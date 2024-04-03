@@ -26,7 +26,7 @@ class SitemapGenerator:
         html = self.get_html(url)
         soup = BeautifulSoup(html, "html.parser")
         links = set()
-        excluded_extensions = ['.pdf', '.xlsx', '.docx', '.jpg', 'doc', 'xls']  # 除外する拡張子のリスト
+        excluded_extensions = ['.pdf', '.xlsx', '.docx', '.jpg', '.doc', '.xls']  # 除外する拡張子のリスト
         for link in soup.find_all("a", href=True):
             full_link = urljoin(url, link['href'])
             # 除外する拡張子で終わるリンクを無視
