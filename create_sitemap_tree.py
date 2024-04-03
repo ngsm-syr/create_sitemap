@@ -58,11 +58,11 @@ class SitemapGenerator:
         self.pages_info.sort(key=sort_key)
 
 if __name__ == "__main__":
-    base_url = "https://ierg.u-gakugei.ac.jp"  # 対象のウェブサイトURLに変更してください
+    base_url = "https://sample.com"  # 対象のウェブサイトURLに変更してください
     generator = SitemapGenerator(base_url)
     generator.crawl()
 
     # 階層、URL、タイトルの順にファイルに保存
-    with open("/Users/ngsmlab/Desktop/sitemap_with_titles2.txt", "w", encoding='utf-8') as f:
+    with open("/Users/UserName/Desktop/sitemap_with_titles2.txt", "w", encoding='utf-8') as f:
         for depth, url, title in sorted(generator.pages_info):
             f.write(f"{depth}\t{title}\t{url}\n")  # 必要に応じて出力形式を調整
